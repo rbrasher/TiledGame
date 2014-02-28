@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<texture version="1" file="CharactersTexturePacker.png" type="bitmap" width="98" height="130" pixelformat="RGBA_8888" minfilter="linear" magfilter="linear" wrapt="clamp" wraps="clamp" premultiplyalpha="true">
+    <!-- Created with TexturePacker http://texturepacker.com -->
+    <!-- $TexturePacker:SmartUpdate:bda071e326ccb894b1293350b9e4216c$ -->
+    <textureregion id="0" src="hero.png" x="1" y="1" width="96" height="128" rotated="false" trimmed="false" srcx="0" srcy="0" srcwidth="96" srcheight="128"/>
+</texture>

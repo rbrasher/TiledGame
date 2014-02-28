@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<texture version="1" file="Util.png" type="bitmap" width="988" height="840" pixelformat="RGBA_4444" minfilter="linear" magfilter="linear" wrapt="clamp" wraps="clamp" premultiplyalpha="false">
+    <!-- Created with TexturePacker http://texturepacker.com -->
+    <!-- $TexturePacker:SmartUpdate:195e2c84c81fdf16aa335eb3d3af2953$ -->
+    <textureregion id="0" src="FadeBackground.png" x="1" y="1" width="504" height="336" rotated="false" trimmed="false" srcx="0" srcy="0" srcwidth="504" srcheight="336"/>
+    <textureregion id="1" src="MainMenu.png" x="507" y="323" width="480" height="320" rotated="false" trimmed="false" srcx="0" srcy="0" srcwidth="480" srcheight="320"/>
+    <textureregion id="2" src="onscreen_control_base.png" x="1" y="645" width="128" height="128" rotated="false" trimmed="false" srcx="0" srcy="0" srcwidth="128" srcheight="128"/>
+    <textureregion id="3" src="onscreen_control_knob.png" x="1" y="775" width="64" height="64" rotated="false" trimmed="false" srcx="0" srcy="0" srcwidth="64" srcheight="64"/>
+    <textureregion id="4" src="splashScreen.png" x="507" y="1" width="480" height="320" rotated="false" trimmed="false" srcx="0" srcy="0" srcwidth="480" srcheight="320"/>
+</texture>

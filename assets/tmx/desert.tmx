@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map SYSTEM "http://mapeditor.org/dtd/1.0/map.dtd">
+<map version="1.0" orientation="orthogonal" width="20" height="15" tilewidth="32" tileheight="32">
+ <properties>
+  <property name="MapName" value="DESERT1"/>
+ </properties>
+ <tileset firstgid="1" name="Desert" tilewidth="32" tileheight="32" spacing="3" margin="2">
+  <image source="gfx/desert_tiled.png" width="281" height="211"/>
+  <tile id="30">
+   <properties>
+    <property name="cactus" value="true"/>
+   </properties>
+  </tile>
+  <tile id="31">
+   <properties>
+    <property name="COLLISION" value="true"/>
+   </properties>
+  </tile>
+  <tile id="37">
+   <properties>
+    <property name="ANIMATE" value="40"/>
+   </properties>
+  </tile>
+  <tile id="38">
+   <properties>
+    <property name="ANIMATE" value="38"/>
+   </properties>
+  </tile>
+  <tile id="39">
+   <properties>
+    <property name="ANIMATE" value="39"/>
+   </properties>
+  </tile>
+  <tile id="45">
+   <properties>
+    <property name="DOOR" value="true"/>
+   </properties>
+  </tile>
+  <tile id="46">
+   <properties>
+    <property name="GRASS" value="1"/>
+   </properties>
+  </tile>
+  <tile id="47">
+   <properties>
+    <property name="TOP" value="true"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="49" name="test2" tilewidth="32" tileheight="32">
+  <image source="images.png" width="512" height="384"/>
+ </tileset>
+ <layer name="Ground Layer" width="20" height="15">
+  <properties>
+   <property name="INDEX" value="0"/>
+  </properties>
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC5NjYGCQg2J1NCxHISZkngISpoZ5IKxHgnmEMKnuo7d5yP6VQsLUcJ8SEibXPEWofhUg1gJiVSqZpwzE/Eh8apgnRwXzRjHtMQABzyBbsAQAAA==
+  </data>
+ </layer>
+ <layer name="Alpha Layer" width="20" height="15">
+  <properties>
+   <property name="" value=""/>
+  </properties>
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC2NgGFlADQmPBPNGwSgYTgAA3m/Y37AEAAA=
+  </data>
+ </layer>
+ <layer name="Top Layer" width="20" height="15">
+  <properties>
+   <property name="" value=""/>
+  </properties>
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC2NgGAUwoISER4J5lAAFPHgUjAJaAQDfM9USsAQAAA==
+  </data>
+ </layer>
+ <objectgroup name="Exit Tiles" width="20" height="15">
+  <properties>
+   <property name="" value=""/>
+  </properties>
+  <object name="Exit a" x="384" y="64" width="32" height="32">
+   <properties>
+    <property name="EXIT" value="DESERT2"/>
+    <property name="LINK" value="a"/>
+    <property name="SPAWN" value="left"/>
+   </properties>
+  </object>
+  <object name="Exit b" x="384" y="160" width="32" height="32">
+   <properties>
+    <property name="EXIT" value="DESERT2"/>
+    <property name="LINK" value="b"/>
+    <property name="SPAWN" value="left"/>
+   </properties>
+  </object>
+  <object name="Exit c" x="448" y="256" width="32" height="32">
+   <properties>
+    <property name="EXIT" value="DESERT2"/>
+    <property name="LINK" value="c"/>
+    <property name="SPAWN" value="left"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="Collision Tiles" width="20" height="15">
+  <properties>
+   <property name="COLLIDE" value="true"/>
+  </properties>
+  <object x="352" y="96" width="96" height="32"/>
+  <object x="416" y="32" width="32" height="64"/>
+  <object x="352" y="32" width="64" height="32"/>
+  <object x="352" y="128" width="96" height="32"/>
+  <object x="416" y="160" width="32" height="64"/>
+  <object x="352" y="192" width="64" height="32"/>
+  <object x="64" y="224" width="224" height="32"/>
+ </objectgroup>
+ <objectgroup name="Change Layer" width="20" height="15">
+  <properties>
+   <property name="CHANGE" value=""/>
+  </properties>
+  <object x="96" y="0" width="128" height="96"/>
+ </objectgroup>
+</map>

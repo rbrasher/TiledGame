@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map SYSTEM "http://mapeditor.org/dtd/1.0/map.dtd">
+<map version="1.0" orientation="orthogonal" width="125" height="125" tilewidth="32" tileheight="32">
+ <properties>
+  <property name="MapName" value="DESERT2"/>
+ </properties>
+ <tileset firstgid="1" name="Desert" tilewidth="32" tileheight="32" spacing="3" margin="2">
+  <image source="gfx/desert_tiled.png" width="281" height="211"/>
+  <tile id="30">
+   <properties>
+    <property name="cactus" value="true"/>
+   </properties>
+  </tile>
+  <tile id="31">
+   <properties>
+    <property name="COLLISION" value="true"/>
+   </properties>
+  </tile>
+  <tile id="37">
+   <properties>
+    <property name="ANIMATE" value="40"/>
+   </properties>
+  </tile>
+  <tile id="38">
+   <properties>
+    <property name="ANIMATE" value="38"/>
+   </properties>
+  </tile>
+  <tile id="39">
+   <properties>
+    <property name="ANIMATE" value="39"/>
+   </properties>
+  </tile>
+  <tile id="47">
+   <properties>
+    <property name="TOP" value="true"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="Ground Layer" width="125" height="125">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+2dUY6kIBBAvcHcYLYzH65fc//jbToZE4ZFQCmognofL53pMdjypCwQ5XPbtk8hXgFSZYJt3q6/fz4/gu8PgbKPAO3j9MyecB5+SoHrsbw24rU33q6/g7+/lNCuB0+8tvHt/E/0d+z8r4F68Up8PU+5i/098Y5zXUq51NHoGudzUmr/p7cUqW1xboePjmXn2jmsSck5bX0spVicY9/u5344n9N1C8R2XeeS5dXkejhfjxrvOF+bVL8e5z4Ix35w7o8r5xr5JOg6P72nvq/pE4JdpGP7vnFOWIfruT9wvj7x/Vrm3axPyrlk+Ti3R43zlnmwOLfP6Sjsl9XM17naFud2OcdhU87DbUJK/nFumxrnT8C5DXLjIzhflyvvT5znYn3snPE4ezxt51fecW6TfRt3Pce5PVqdl56FAl1S/W4J58yXn4uvH2en8ydjcDifi9hR6/sHcG6fUc7J5ezQ0i5z+QHObRHmazj3Ac79kXN+53qOc5ukvGg4Bz3n8bMKo2I76Dq/4yg3Podze5TiupQjxuHs8NT5kdke5/Oh6ZzcvT+j2nmpPBjrvNT3IravxxPnLeDcPuTt/qCd+0PDOfn7nM7PPIE5kPPR6lyqPOiD9Pj4+T55nNulxz0RnM8H7xzwR+joKp++M/6Kc/vUOM/Bcyy2SbVXiXaO87lgHM4fNY5ar+fh/b2R6/FKrEu2IhLOR8d21nGez3n8PqoUNb+ddtzPuWZ5PTg237HCo3Nv9JjrHJc3M9p+evjOOc+Nyay+TseKvmuO1fNcBq/O33hde8e786ttR58LI+NOXA8r9wHvnN93nNf0gWKnqf5Tbj2fPUHq/9L1MAO5+u/l3Dqe53rcdb6Sd5zXe9f+zRLQzmGlehj9vNqseKqHO321lZgxtkutSerFeRzvLDgv1fX5m+O+6JP7gR7XP7foXIuRx6o5nr96XuN5/Mmr8zukjnXVa7oV53u0X+15Al58W7me1+5XKmeHeZxfnQOcC36cp86B8BN+U7MWoJZzyWtr6T50S9mz5QB3nfecD+2pvzCT857gXI+RdS/1/vxUuSvPcXiKtXcfPd1vySvufzu3tNYAsX2cd826v4rt9LNwDn29j3IuuQYSzONcY7/wPxZzOGI9zqEdC+84I7brgXN/jKj7VKzGOc4B5yCHVv8c5/6c14zJ0Ecbg6V2jvO1iZ3jey1qcjicrwV5uz9wDjj3Cc79QV/NHzj3B7EdYF1S8ZuYDgAAAAAA0Id/YEf8aCT0AAA=
+  </data>
+ </layer>
+ <layer name="Alpha Layer" width="125" height="125">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3RsQkAIBRDwT+LhbX7T2ctaCcE9A5eH0gVrMYh/tTTA7iipQcAENE38T6fAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKRPXc9lRJPQAAA==
+  </data>
+ </layer>
+ <layer name="Top Layer" width="125" height="125">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3DsQ0AAAgDoH7i/1+6d3MWEhIAvpsKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHC13N/wnCT0AAA=
+  </data>
+ </layer>
+ <objectgroup color="#a4145a" name="Exit Tiles" width="125" height="125">
+  <properties>
+   <property name="Exit" value="0"/>
+   <property name="Link" value="a"/>
+   <property name="Spawn" value="right"/>
+  </properties>
+  <object name="Exit a" x="288" y="128" width="32" height="32">
+   <properties>
+    <property name="EXIT" value="DESERT1"/>
+    <property name="LINK" value="a"/>
+    <property name="SPAWN" value="right"/>
+   </properties>
+  </object>
+  <object name="Exit b" x="640" y="32" width="32" height="32">
+   <properties>
+    <property name="EXIT" value="DESERT1"/>
+    <property name="LINK" value="b"/>
+    <property name="SPAWN" value="down"/>
+   </properties>
+  </object>
+  <object name="Exit c" x="480" y="288" width="32" height="32">
+   <properties>
+    <property name="EXIT" value="DESERT1"/>
+    <property name="LINK" value="c"/>
+    <property name="SPAWN" value="down"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>
