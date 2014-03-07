@@ -1,5 +1,10 @@
 package Menu;
 
+import javax.microedition.khronos.opengles.GL10;
+
+import org.andengine.entity.IEntity;
+import org.andengine.entity.modifier.AlphaModifier;
+import org.andengine.entity.modifier.IEntityModifier.IEntityModifierListener;
 import org.andengine.entity.primitive.Rectangle;
 import org.andengine.entity.scene.Scene;
 import org.andengine.entity.sprite.Sprite;
@@ -7,6 +12,8 @@ import org.andengine.entity.text.Text;
 import org.andengine.input.touch.TouchEvent;
 import org.andengine.opengl.font.Font;
 import org.andengine.ui.activity.BaseGameActivity;
+import org.andengine.util.color.Color;
+import org.andengine.util.modifier.IModifier;
 
 import android.view.View.OnTouchListener;
 
@@ -113,9 +120,134 @@ public class MenuButton {
 			TouchRect.setPosition(0, 0);
 		}
 		
-		if(!ButtonText.hasParent())
+		if(!ButtonText.hasParent()) {
+			pMenu.attachChild(ButtonText);
+			pMenu.attachChild(TouchRect);
+			mScene.registerTouchArea(TouchRect);
+		}
+	}
+	
+	//Detaches the button from the scene
+	public void DetachButton() {
+		WorldActivity.mWorldEngine.runOnUpdateThread(new Runnable() {
+
+			@Override
+			public void run() {
+				mBaseMenu.detachChild(ButtonText);
+				mBaseMenu.detachChild(TouchRect);
+				mScene.unregisterTouchArea(TouchRect);
+			}
+		});
+	}
+	
+	//Switches the current button with the selected one
+	public void SwitchButton(MenuButton pNextButton) {
+		mNextButton = pNextButton;
+		isNextButtonAttached = true;
+		//Attaches the selected button to the selected background and detaches the current button
+		pNextButton.AttachButton(mBaseMenu);
+		this.DetachButton();
+	}
+	
+	/**
+	 * If the button has been switched then it is reset to the original. It does this by seeing if the
+	 * button was switched, if it was then detach the switched button and attach the original button
+	 */
+	public void ResetButton() {
+		if(isNextButtonAttached) {
+			mNextButton.DetachButton();
+			this.AttachButton(mBaseMenu);
+			isNextButtonAttached = false;
+		}
+	}
+	
+	/**
+	 * Changes the region where user input is recognized and sets the position of the touch rectangle.
+	 */
+	public void AlterTouchRegion(float pWidth, float pHeight, boolean pCenterRect) {
+		if(pCenterRect) {
+			TouchRect.setPosition(ButtonText.getX() + this.getWidth() / 2 - pWidth / 2, ButtonText.getY() + this.getHeight() / 2 - pHeight / 2);
+		}
+		TouchRect.setWidth(pWidth);
+		TouchRect.setHeight(pHeight);
+	}
+	
+	public void AlterTouchRegion(float pX, float pY, float pWidth, float pHeight) {
+		TouchRect.setPosition(TouchRect.getX() + pX, TouchRect.getY() + pY);
+		TouchRect.setWidth(pWidth);
+		TouchRect.setHeight(pHeight);
+	}
+	
+	//set the position of the button
+	public void setPosition(float pX, float pY) {
+		TouchRect.setPosition(pX, pY);
+		ButtonText.setPosition(pX, pY);
+	}
+	
+	/**
+	 * Get the width of the button
+	 */
+	public float getWidth() {
+		return ButtonText.getWidth();
+	}
+	
+	/**
+	 * Get the height of the button
+	 */
+	public float getHeight() {
+		return ButtonText.getHeight();
+	}
+	
+	/**
+	 * Enables or disables the buttons touch area
+	 */
+	public void DisableButton() {
+		mScene.unregisterTouchArea(TouchRect);
+	}
+	
+	public void EnableButton() {
+		mScene.registerTouchArea(TouchRect);
+	}
+	
+	public IEntity GetParent() {
+		return ButtonText.getParent();
+	}
+	
+	public boolean hasParent() {
+		return ButtonText.hasParent();
+	}
+	
+	public void setVisible(boolean pVisible) {
+		ButtonText.setVisible(pVisible);
+	}
+	
+	public void setColor(Color pColor) {
+		ButtonText.setColor(pColor);
+	}
+	
+	/**
+	 * Fades the button in or out
+	 */
+	public void FadeButton(float pDuration, float pInitial, float pFinal) {
+		ButtonText.setBlendFunction(GL10.GL_SRC_ALPHA, GL10.GL_ONE_MINUS_SRC_ALPHA);
+		ButtonText.registerEntityModifier(new AlphaModifier(pDuration, pInitial, pFinal));
+	}
+	
+	//this is used when detaching something
+	public void FadeButton(float pDuration, float pInitial, float pFinal, final OnStatusUpdateListener pOnFinishHandler) {
+		ButtonText.setBlendFunction(GL10.GL_SRC_ALPHA, GL10.GL_ONE_MINUS_SRC_ALPHA);
+		ButtonText.registerEntityModifier(new AlphaModifier(pDuration, pInitial, pFinal, new IEntityModifierListener() {
 			
+			@Override
+			public void onModifierStarted(IModifier<IEntity> pModifier, IEntity pItem) {
+				
+			}
 			
+			@Override
+			public void onModifierFinished(IModifier<IEntity> pModifier, IEntity pItem) {
+				pOnFinishHandler.onFinish();
+			}
+		}));
 	}
 	
 }
