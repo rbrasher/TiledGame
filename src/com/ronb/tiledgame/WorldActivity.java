@@ -14,6 +14,8 @@ import org.andengine.extension.tmx.TMXTile;
 import org.andengine.input.touch.TouchEvent;
 import org.andengine.ui.activity.SimpleBaseGameActivity;
 
+import Scene.SceneManager.SceneManager;
+import Sequences.GameIntroSequence;
 import android.content.ContextWrapper;
 import android.content.pm.ActivityInfo;
 

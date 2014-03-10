@@ -16,6 +16,8 @@ import org.andengine.util.algorithm.path.Path;
 import org.andengine.util.algorithm.path.astar.ManhattanHeuristic;
 
 import GameSprite.MyAnimatedSprite;
+import Scene.SceneManager.SceneManager;
+import TMXmap.TMXmapLoader;
 import android.util.FloatMath;
 import android.util.Log;
 
@@ -33,7 +35,7 @@ public class AstarPath {
 	private static final int MAX_SEARCH_DEPTH = 10;
 	// TMX variables
 	private TMXTiledMap mTiledMap;
-	private TMXMapLoader mTMXmapLoader;
+	private TMXmapLoader mTMXmapLoader;
 	private TMXTile mFinalPosition;
 
 	// Paths
@@ -56,8 +58,7 @@ public class AstarPath {
 	// ==========================================
 	// CONSTRUCTOR
 	// ==========================================
-	public AStarPath(TMXTiledMap pTiledMap, TMXMapLoader pTMXLoader,
-			WorldActivity pMain) {
+	public AstarPath(TMXTiledMap pTiledMap, TMXmapLoader pTMXLoader, WorldActivity pMain) {
 		mTiledMap = pTiledMap;
 		mTMXmapLoader = pTMXLoader;
 		mHasFinishedPath = true;
@@ -76,7 +77,7 @@ public class AstarPath {
 	 */
 	public AstarPath generatePathMap() {
 		// create the needed objects for the AStarPathFinder
-		mAStarPathFinder = new MyAStarPathFinder<TMXLayer>();
+		mAStarPathFinder = new MyAstarPathFinder<TMXLayer>();
 
 		// no special heuristics needed
 		mHeuristic = new ManhattanHeuristic<TMXLayer>();

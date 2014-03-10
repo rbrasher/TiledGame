@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import org.andengine.entity.modifier.PathModifier.Path;
 import org.andengine.extension.tmx.TMXTile;
 
+import GameSprite.MyAnimatedSprite;
+
 import com.ronb.tiledgame.WorldActivity;
 
 public enum EDirections {

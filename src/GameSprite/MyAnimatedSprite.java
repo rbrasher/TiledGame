@@ -14,6 +14,8 @@ import org.andengine.extension.tmx.TMXTile;
 import org.andengine.opengl.texture.region.ITiledTextureRegion;
 import org.andengine.util.modifier.ease.EaseLinear;
 
+import TMXmap.TMXmapLoader;
+
 import com.ronb.tiledgame.WorldActivity;
 import com.ronb.tiledgame.Enums.EDirections;
 

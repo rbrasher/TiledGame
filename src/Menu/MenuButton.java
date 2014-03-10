@@ -15,6 +15,7 @@ import org.andengine.ui.activity.BaseGameActivity;
 import org.andengine.util.color.Color;
 import org.andengine.util.modifier.IModifier;
 
+import Scene.SceneManager.SceneManager;
 import android.view.View.OnTouchListener;
 
 import com.ronb.tiledgame.WorldActivity;
