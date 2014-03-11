@@ -15,6 +15,7 @@ import org.andengine.opengl.texture.region.ITiledTextureRegion;
 import org.andengine.util.modifier.ease.EaseLinear;
 
 import TMXmap.TMXmapLoader;
+import Util.UpdateLoops;
 
 import com.ronb.tiledgame.WorldActivity;
 import com.ronb.tiledgame.Enums.EDirections;
@@ -56,7 +57,7 @@ public class MyAnimatedSprite extends AnimatedSprite {
 	// ==========================================
 	// GETTERS & SETTERS
 	// ==========================================
-	public TMXTile getSpritePathTiles() {
+	public TMXTile[] getSpritePathTiles() {
 		return mUpdateLoops.getSpriteTiles();
 	}
 
@@ -128,9 +129,9 @@ public class MyAnimatedSprite extends AnimatedSprite {
 	
 	public void registerTileTracker(final TMXLayer pTMXLayer){
 		//unregister the previous update handler.This has to be before the new declaration
-		this.unregisterUpdateHandler(mSpritePostionUpdater);
-		mSpritePostionUpdater = mUpdateLoops.trackSpriteTiles(this, pTMXLayer);
-		this.registerUpdateHandler(mSpritePostionUpdater);
+		this.unregisterUpdateHandler(mSpritePositionUpdater);
+		mSpritePositionUpdater = mUpdateLoops.trackSpriteTiles(this, pTMXLayer);
+		this.registerUpdateHandler(mSpritePositionUpdater);
 	}
 	
 	public void registerExitPathUpdater(TMXmapLoader pTMXmapLoader){
@@ -162,7 +163,7 @@ public class MyAnimatedSprite extends AnimatedSprite {
 	 * Not used but keep just in case
 	 */
 	public void unregisterTileTracker(){
-		this.unregisterUpdateHandler(mSpritePostionUpdater);
+		this.unregisterUpdateHandler(mSpritePositionUpdater);
 	}
 		
 	public void stopAnimation(EDirections pDirection){

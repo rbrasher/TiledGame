@@ -10,6 +10,9 @@ import org.andengine.extension.tmx.TMXTiledMap;
 import GameSprite.MyAnimatedSprite;
 import Path.AstarPath;
 import Scene.SceneManager.SceneManager;
+import TMXmap.TMXScene;
+import TMXmap.TMXmapLoader;
+import Util.AssetLoaderUtil;
 import android.opengl.GLES20;
 
 import com.ronb.tiledgame.WorldActivity;

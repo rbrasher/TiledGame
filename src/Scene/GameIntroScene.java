@@ -4,6 +4,8 @@ import org.andengine.entity.scene.background.Background;
 import org.andengine.entity.sprite.Sprite;
 import org.andengine.util.color.Color;
 
+import Util.AssetLoaderUtil;
+
 import com.ronb.tiledgame.WorldActivity;
 
 /**

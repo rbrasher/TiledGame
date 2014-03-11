@@ -16,6 +16,9 @@ import org.andengine.util.modifier.ease.EaseCubicIn;
 
 import GameSprite.MyAnimatedSprite;
 import Scene.SceneManager.SceneManager;
+import TMXmap.TMXScene;
+import TMXmap.TMXmapLoader;
+import Util.FadeScreen;
 import android.opengl.GLES20;
 import android.util.Log;
 

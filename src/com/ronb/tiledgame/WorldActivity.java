@@ -16,6 +16,7 @@ import org.andengine.ui.activity.SimpleBaseGameActivity;
 
 import Scene.SceneManager.SceneManager;
 import Sequences.GameIntroSequence;
+import Util.AssetLoaderUtil;
 import android.content.ContextWrapper;
 import android.content.pm.ActivityInfo;
 
@@ -107,7 +108,7 @@ public class WorldActivity extends SimpleBaseGameActivity implements IOnSceneTou
 		//goes to main menu
 		new GameIntroSequence(this);
 		
-		return SceneManager.mLoadScene;
+		return SceneManager.mLoadingScene;
 	}
 	
 	@Override
